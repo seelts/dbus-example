@@ -99,6 +99,7 @@ static DBusHandlerResult test_handler(DBusConnection *connection, DBusMessage *m
 
 	if (FALSE == dbus_connection_send(dbus_connection, reply, NULL)) {
 		fprintf(stderr, "can't send a reply (not enough memory)\n");
+		return DBUS_HANDLER_RESULT_NEED_MEMORY;
 	}
 
 	fprintf(stderr, "request echoed\n");
